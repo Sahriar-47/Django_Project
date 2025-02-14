@@ -1,0 +1,36 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Submissions</title>
+</head>
+<body>
+    <h1>Submissions</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Student</th>
+                <th>Problem</th>
+                <th>Solved On</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for submission in page_obj %}
+            <tr>
+                <td>{{ submission.student.name }}</td>
+                <td>{{ submission.problem.title }}</td>
+                <td>{{ submission.solved_on }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div>
+        <span>Page: {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+        {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+        {% endif %}
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">Next</a>
+        {% endif %}
+    </div>
+</body>
+</html>
