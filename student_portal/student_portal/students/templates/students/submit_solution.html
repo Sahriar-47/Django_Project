@@ -1,0 +1,5 @@
+<h1>Submit Solution for {{ problem.title }}</h1>
+      <form method="post">{% csrf_token %}
+          <textarea name="solution_text" rows="5" cols="40"></textarea><br>
+          <button type="submit">Submit</button>
+      </form>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <title>OS Algorithms</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>***Welcome to <br>OS Algorithms Calculator***</h1>
+    <h2>1) Process Scheduling Algorithms:</h2>
+    <ul>
+        <li><a href="{% url 'fcfs' %}" style="font-family: 'Arial'; font-size: 16px;">First Come First Serve Algorithm</a></li>
+        <li><a href="{% url 'priority' %}" style="font-family: 'Arial'; font-size: 16px;">Priority Scheduling Algorithm</a></li>
+        <li><a href="{% url 'sjf' %}" style="font-family: 'Arial'; font-size: 16px;">Shortest Job First Algorithm (non-Preemptive)</a></li>
+        <li><a href="{% url 'preemptive_sjf' %}" style="font-family: 'Arial'; font-size: 16px;">Shortest Job First Algorithm (Preemptive)</a></li>
+        <li><a href="{% url 'round_robin' %}" style="font-family: 'Arial'; font-size: 16px;">Round Robin Algorithm</a></li>
+    </ul>
+    <h2>2) Deadlock Avoidance Algorithm:</h2>
+    <ul>
+        <li><a href="{% url 'bankers_form' %}" style="font-family: 'Arial'; font-size: 16px;">Banker's Algorithm</a></li>
+    </ul>
+    <h2>3) Disk Sheduling Algorithms:</h2>
+    <ul>
+        <li><a href="{% url 'fcfs_disk' %}" style="font-family: 'Arial'; font-size: 16px;">FCFS Disk Scheduling Algorithm</a></li>
+        <li><a href="{% url 'sstf_disk' %}" style="font-family: 'Arial'; font-size: 16px;">SSTF Disk Sheduling Algorithm</a></li>
+        <li><a href="{% url 'scan_disk' %}" style="font-family: 'Arial'; font-size: 16px;">SCAN Disk Sheduling Algorithm</a></li>
+        <li><a href="{% url 'cscan_disk' %}" style="font-family: 'Arial'; font-size: 16px;">C-SCAN Disk Sheduling Algorithm</a></li>
+        <li><a href="{% url 'look_disk' %}" style="font-family: 'Arial'; font-size: 16px;">LOOK Disk Sheduling Algorithm</a></li>
+        <li><a href="{% url 'clook_disk' %}" style="font-family: 'Arial'; font-size: 16px;">C-LOOK Disk Sheduling Algorithm</a></li>
+    </ul>
+</body>
+</html>

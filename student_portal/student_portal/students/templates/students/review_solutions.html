@@ -1,0 +1,8 @@
+<h1>Review Solutions</h1>
+      <ul>
+          {% for solution in solutions %}
+              <li>{{ solution.student.username }}: {{ solution.solution_text }}
+                  <a href="{% url 'approve_solution' solution.id %}">Approve</a>
+              </li>
+          {% endfor %}
+      </ul>

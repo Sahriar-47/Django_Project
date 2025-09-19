@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FCFS Disk Scheduling</title>
+</head>
+<body>
+    <h1>FCFS Disk Scheduling Algorithm</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        <label>Enter Request Sequence (comma-separated):</label><br>
+        <input type="text" name="requests" placeholder="" required><br><br>
+
+        <label>Enter Initial Head Position:</label><br>
+        <input type="number" name="head" required><br><br>
+
+        <button type="submit">Calculate</button>
+    </form>
+
+    {% if result %}
+        {% if result.error %}
+            <p style="color: red;">{{ result.error }}</p>
+        {% else %}
+            <h2>Results:</h2>
+            <p><strong>Seek Sequence:</strong> {{ result.seek_sequence }}</p>
+            <p><strong>Total Seek Time:</strong> {{ result.total_seek_time }}</p>
+        {% endif %}
+    {% endif %}
+    <br>
+    <a href="{% url 'index' %}">Back to Home</a>
+</body>
+</html>
